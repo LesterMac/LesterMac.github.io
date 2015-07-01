@@ -1,2 +1,2 @@
 # lestermac.github.io
-Demo
+Demo of <a href="http://lestermac.github.io">lestermac.github.io</a>
