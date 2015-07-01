@@ -9,8 +9,17 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="squarescream.jpg" rel="shortcut icon">
 </head>
-<body>
-    <nav class="navbar navbar-default"></nav>
+<body ng-cloak>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="fa fa-home"></span>
+                    LesterMac
+                </a>
+            </div>
+        </div>
+    </nav>
     <div class="container" ng-controller="MyCtrl as vm">
         <h2>{{vm.title}}</h2>
     </div>
