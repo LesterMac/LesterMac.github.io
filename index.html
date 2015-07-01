@@ -1,14 +1,28 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LesterMac on github</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="squarescream.jpg" rel="shortcut icon">
 </head>
 <body>
     <nav class="navbar navbar-default"></nav>
-    <div class="container">
-        <h2>index</h2>
+    <div class="container" ng-controller="MyCtrl as vm">
+        <h2>{{vm.title}}</h2>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script>
+        angular.module('app', ['myGithub']);
+        angular.module('myGithub', []).controller('MyCtrl', [myCtrl]);
+        function myCtrl() {
+            var self = this;
+            self.title = 'My GitHub Page...';
+        }
+    </script>
 </body>
 </html>
