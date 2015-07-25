@@ -54,16 +54,18 @@
             self.title = 'My GitHub Page...';
             self.selectPrez = selectPrez;
 
-            self.presidents = myService.getData();
-            self.president = self.presidents[0];
+            myService.getData().then(function (data) {
+                self.presidents = data;
+                self.president = self.presidents[0];
+            })
 
             function selectPrez(val) {
                 self.president = val;
             }
         }
 
-        angular.module('myGithub').factory('myService', [myService]);
-        function myService() {
+        angular.module('myGithub').factory('myService', ['$q', myService]);
+        function myService($q) {
             var service = {
                 getData: getMyData
             }
@@ -116,7 +118,7 @@
                   { "number": 43, "president": "George W. Bush", "birth_year": 1946, "death_year": null, "took_office": "2001-01-20", "left_office": "2009-01-20", "party": "Republican" },
                   { "number": 44, "president": "Barack Obama", "birth_year": 1961, "death_year": null, "took_office": "2009-01-20", "left_office": null, "party": "Democratic" }
                 ];
-                return items;
+                return $q.when(items);
             }
         }
     </script>
