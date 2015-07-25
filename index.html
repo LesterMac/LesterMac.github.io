@@ -26,9 +26,10 @@
         <hr />
         <div class="row">
             <div class="col-sm-4">
+                <input class="form-control" type="text" placeholder="Search for anything..." ng-model="search" />
                 <div class="list-group">
                     <a class="list-group-item"
-                       ng-repeat="p in vm.presidents"
+                       ng-repeat="p in vm.presidents|filter:search"
                        ng-class="{ 'active': p == vm.president }"
                        ng-click="vm.selectPrez(p)">
                         {{p.number}}.
