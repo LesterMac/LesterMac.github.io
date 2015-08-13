@@ -1,3 +1,4 @@
 # lestermac.github.io
-Demo of <a href="http://lestermac.github.io">lestermac.github.io</a>
+Demo of [lestermac.github.io](http://lestermac.github.io)
 to make a website.
+
